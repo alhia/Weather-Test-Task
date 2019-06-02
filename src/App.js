@@ -18,21 +18,7 @@ class App extends Component {
     }
 }
 
-  getWeather = (e, city) => {
-    e.preventDefault();
-    console.log(this.state.city)
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${config.apiKey}`)
-      .then(res => res.json())
-      .then(data => this.setState({
-        cod: data.cod,
-        city: data.name,
-        weather: data.weather[0],
-        main: data.main,
-        icon: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
-      }))
-      
-      .catch(err => new Error(err))
-  }
+
 
   render() {
     const { cod, city, weather, main, icon } = this.state;
