@@ -5,22 +5,22 @@ export default class SearchBar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            value: null
+            input: ''
         }
     }
     onChange = (event) => {
-        this.setState({value: event.target.value});
-        console.log(this.state.value)
+        this.setState({input: event.target.value});
     }
     render() {
-       const { value } = this.state;
+       const { input } = this.state;
+       const { getWeather } = this.props;
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={(e) => getWeather(e, input)}>
                 <Input 
                 size='massive' 
                 icon='search' 
                 placeholder='Search for city...' 
-                value={value}
+                value={input}
                 onChange={this.onChange}
                 />
             </form>

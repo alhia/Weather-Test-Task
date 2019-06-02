@@ -1,3 +1,19 @@
 .weather-container {
-    height: 50vh;
+    padding: 10vw;
+    color: white;
+}
+
+
+.weather-icon {
+    height: 80px;
+    width: 80px;
+}
+
+h1, h3, h2 {
+    font-size: 2.7rem
+
+}
+
+.max-min-temp {
+    color: rgba(255, 255, 255, 0.753);
 }
